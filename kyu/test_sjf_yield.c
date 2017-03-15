@@ -35,7 +35,7 @@ int main(void) {
   printf(" Assumptions\n");
   printf("(1) the default runtime value is less than 200 msec (real time rather than cputime).\n");
   printf(" * The threads with tid %d, %d and %d should end earlier than the threads with tid %d, %d, %d\n",
-          tid1, tid3, tid5, tid2, tid3, tid6);
+          tid1, tid3, tid5, tid2, tid4, tid6);
 
   int n  = 6;
   int tids[] = { tid1, tid2, tid3, tid4, tid5, tid6 };
