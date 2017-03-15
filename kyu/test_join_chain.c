@@ -14,11 +14,6 @@ void foo_join(void *tid) {
   thread_join(*((int *)tid));
 }
 
-
-/**
- * Testing a chain of join for FIFO.
- * Expected Log: thread 1 to thread 6 end in order.
- */
 int main(void) {
   if (thread_libinit(FIFO) == FAILURE)
     exit(EXIT_FAILURE);
@@ -32,6 +27,10 @@ int main(void) {
 
   int n  = 6;
   int tids[] = { tid1, tid2, tid3, tid4, tid5, tid6 };
+
+  printf(" * Testing a chain of joins for FIFO\n");
+  printf(" * Threads should in this order: %d -> %d -> %d -> %d -> %d -> %d\n",
+         tid1, tid2 ,tid3, tid4, tid5, tid6);
 
   for (int i = 0; i < n; i++)  {
     if (tids[i] == -1)
